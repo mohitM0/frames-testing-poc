@@ -18,7 +18,7 @@ const handler = async (
       ),
       buttons: [
         // target should be url/endpoint to mint token
-        <Button action="post" target={"/mint"}>
+        <Button action="post" target={`/contract/${contract_address}/token/${token_id}/mint`}>
           Mint
         </Button>,
       ],

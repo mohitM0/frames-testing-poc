@@ -1,9 +1,9 @@
 import { createFrames } from "frames.js/next";
-import { appURL } from "../../../utils";
+import { appURL } from "../../utils";
 import { neynarValidate } from "frames.js/middleware/neynar";
 
 export const frames = createFrames({
-  basePath: "/examples/dynamic-routes/frames",
+  basePath: "/nftMarketplace/frames",
   baseUrl: appURL(),
   debug: process.env.NODE_ENV === "development",
   middleware: [

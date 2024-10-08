@@ -28,7 +28,7 @@ async function getOpenPort(port) {
  */
 async function getExamplesFromDirectory(port) {
   const currentDirectory = dirname(fileURLToPath(import.meta.url));
-  const examplesDirectory = resolve(currentDirectory, "../app/examples");
+  const examplesDirectory = resolve(currentDirectory, "../app/nftMarketplace");
 
   const foundDirectoriesAndFilesInExamplesDirectory = await readdir(
     examplesDirectory,
@@ -40,7 +40,7 @@ async function getExamplesFromDirectory(port) {
 
   return exampleDirectories.map((example) => ({
     title: snakeCaseToTitleCase(example),
-    url: `http://localhost:${port}/examples/${example}`,
+    url: `http://localhost:${port}/nftMarketplace/${example}`,
   }));
 }
 

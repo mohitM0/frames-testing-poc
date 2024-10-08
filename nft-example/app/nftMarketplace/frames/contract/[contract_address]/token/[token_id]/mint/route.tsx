@@ -33,8 +33,7 @@ const handler = async (
   { params: { token_id, contract_address } }: { params: { token_id: string, contract_address: string } }
 ) => {
   try {
-    const response = await sendTransaction(token_id, contract_address)
-    console.log(response)
+    console.log("mint tx sent")
   } 
   catch (error) {
     console.error(error)
