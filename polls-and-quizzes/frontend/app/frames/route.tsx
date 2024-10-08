@@ -1,17 +1,13 @@
 import { farcasterHubContext } from "frames.js/middleware";
+import { neynarValidate } from "frames.js/middleware/neynar";
 import { createFrames, Button } from "frames.js/next";
 
 const frames = createFrames({
   basePath: '/frames',
   middleware: [
-    farcasterHubContext({
-      // remove if you aren't using @frames.js/debugger or you just don't want to use the debugger hub
-      ...(process.env.NODE_ENV === "production"
-        ? {}
-        : {
-            hubHttpUrl: "http://localhost:3010/hub",
-          }),
-    }),
+    neynarValidate({
+      API_KEY: "3A49F52D-5B5C-41A0-8D22-DF2052F6B126",
+    })
   ],
 });
 
