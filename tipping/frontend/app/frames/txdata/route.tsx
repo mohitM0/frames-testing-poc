@@ -1,27 +1,20 @@
 import { transaction } from "frames.js/core";
-import { farcasterHubContext } from "frames.js/middleware";
+import { neynarValidate } from "frames.js/middleware/neynar";
 import { createFrames, Button } from "frames.js/next";
 
 const frames = createFrames({
   basePath: '/frames',
-  middleware: [
-    farcasterHubContext({
-      // remove if you aren't using @frames.js/debugger or you just don't want to use the debugger hub
-      ...(process.env.NODE_ENV === "production"
-        ? {}
-        : {
-            hubHttpUrl: "http://localhost:3010/hub",
-          }),
-    }),
-  ],
 });
 
 const handleRequest = frames(async (ctx) => {
+  const {address, tip} = ctx.searchParams;
+  // convert tip amount to hex string
+  const tipAmount = BigInt(tip).toString(16);
   return transaction({
-    chainId: "eip155:137",
+    chainId: "eip155:115511",
     method: "eth_sendTransaction",
     params: {
-        to: "0xE3E0F6deC11d198bCF2D096c94ba69D5f4cB625c",
+        to: address as `0x${string}`,
         value: "0x0",
         data: "0x",
         abi: [],
