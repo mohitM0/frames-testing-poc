@@ -11,11 +11,11 @@ const handleRequest = frames(async (ctx) => {
   // convert tip amount to hex string
   const tipAmount = BigInt(tip).toString(16);
   return transaction({
-    chainId: "eip155:115511",
+    chainId: "eip155:11155111",
     method: "eth_sendTransaction",
     params: {
         to: address as `0x${string}`,
-        value: "0x0",
+        value: tipAmount,
         data: "0x",
         abi: [],
     }
