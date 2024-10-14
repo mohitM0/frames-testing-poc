@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://polls-app-2021.herokuapp.com';
+const baseURL = 'https://4372-2409-40d2-4b-bb50-7c45-5ff0-1385-2ec8.ngrok-free.app/';
 
 
 const axiosInstance = axios.create({

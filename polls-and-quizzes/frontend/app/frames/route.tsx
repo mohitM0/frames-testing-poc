@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { farcasterHubContext } from "frames.js/middleware";
 import { neynarValidate } from "frames.js/middleware/neynar";
 import { createFrames, Button } from "frames.js/next";
@@ -12,6 +13,7 @@ const frames = createFrames({
 });
 
 const handleRequest = frames(async (ctx) => {
+  console.log(ctx);
   return {
     image: ctx.message ? (
       <div
